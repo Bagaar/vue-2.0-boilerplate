@@ -1,0 +1,49 @@
+// drop down
+
+.select {
+  position: relative;
+
+  // label
+
+  &__label {
+    $border-width: 1px;
+    @include transition;
+    @include ellipsis;
+    background-color: $white;
+    border: $border-width solid $gray;
+    border-radius: $comp-radius;
+    height: $comp-size;
+    line-height: ($comp-size - $border-width * 2);
+    padding: 0 ($gutter-s + $gutter) 0 $gutter-s;
+    position: relative;
+
+    // after
+
+    &::after {
+      @include transition;
+      @include icomoon;
+      @include em-font-size(32);
+      color: $gray-medium;
+      content: '\e905';
+      position: absolute;
+      right: $gutter-xxs;
+      top: $gutter-xxs;
+    }
+  }
+
+  // select
+
+  &__native {
+    @include overlay;
+    border: 0;
+    cursor: pointer;
+    opacity: 0;
+  }
+
+  &--has-error {
+    .select__label {
+      border-color: $red;
+    }
+  }
+
+}

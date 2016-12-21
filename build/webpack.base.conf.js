@@ -34,7 +34,8 @@ module.exports = {
       'services': path.resolve(__dirname, '../src/app/services'),
       'store': path.resolve(__dirname, '../src/app/store'),
       'transformers': path.resolve(__dirname, '../src/app/transformers'),
-      'utils': path.resolve(__dirname, '../src/app/utils')
+      'utils': path.resolve(__dirname, '../src/app/utils'),
+      'modernizr$': path.resolve(__dirname, '../.modernizrrc')
     }
   },
   resolveLoader: {
@@ -85,6 +86,14 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
+      },
+      {
+        test: /\.modernizrrc.js$/,
+        loader: "modernizr"
+      },
+      {
+        test: /\.modernizrrc(\.json)?$/,
+        loader: "modernizr!json"
       }
     ]
   },
@@ -95,7 +104,7 @@ module.exports = {
     loaders: utils.cssLoaders({ sourceMap: useCssSourceMap }),
     postcss: [
       require('autoprefixer')({
-        browsers: ['last 2 versions']
+        browsers: ['last 30 versions']
       })
     ]
   }

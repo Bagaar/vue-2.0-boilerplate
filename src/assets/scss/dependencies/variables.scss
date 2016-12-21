@@ -1,0 +1,85 @@
+// standard colors
+$black:               #000;
+$white:               #fff;
+
+// app colors
+$gray-darker:         #333334;
+$gray-dark:           #7e7e7e;
+$gray-medium:         #95a5a6;
+$gray:                #cfd5dc;
+$gray-light:          #f0f2f4;
+$gray-lighter:        #fafafa;
+
+$blue-gray-lightest:  #ebeff2;
+$blue-gray-lighter:   #e0e6ed;
+$blue-gray-light:     #7e859c;
+$blue-gray:           #2c3e50;
+$blue-gray-dark:      #24384c;
+$blue-gray-darker:    #0e243a;
+
+$blue-light:          #87d9ff;
+$blue:                #0091ea;
+$blue-dark:           #183f74;
+$blue-darker:         $blue-gray-darker;
+
+$blue-reynaers:       $blue-dark;
+
+$green-light:         #a6e466;
+$green:               #2ecc4e;
+$green-dark:          #189e33;
+
+$red-light:           #ffece6;
+$red:                 #ff4900;
+$red-dark:            #fd1111;
+
+$orange:              #ff9600;
+$orange-dark:         #ff5d00;
+$orange-darker:       #e67e22;
+
+// fonts
+$font-body: 'Open Sans', sans-serif;
+$font-headings: 'Open Sans', sans-serif;
+$font-buttons: 'Open Sans', sans-serif;
+
+// gutters
+$gutter: 20px;
+$gutter-xxxs: $gutter / 5;
+$gutter-xxs: $gutter / 4;
+$gutter-xs: $gutter / 3;
+$gutter-s: $gutter / 2;
+$gutter-m: $gutter;
+$gutter-l: $gutter * 2;
+$gutter-xl: $gutter * 3;
+$gutter-xxl: $gutter * 4;
+$gutter-xxxl: $gutter * 5;
+
+// component props
+$comp-radius: 2px;
+$comp-size: 38px;
+$comp-regular-size: $comp-size;
+$comp-medium-size: 60px;
+$comp-small-size: 32px;
+$comp-large-size: 72px;
+
+// z-indexes
+$zi-label: 1;
+$zi-button: 2;
+$zi-footer: 3;
+$zi-header: 4;
+$zi-notification: 5;
+$zi-fallback: 6;
+
+// screen sizes
+$screen-xs: 480px !default;
+$screen-sm: 800px !default;
+$screen-md: 992px !default;
+$screen-lg: 1420px !default;
+$screen-xl: 1600px !default;
+
+// media queries
+$desktop: '(min-width: #{$screen-xl})';
+$laptop: '(min-width: #{$screen-lg})';
+$netbook: '(min-width: #{$screen-md + 220})';
+$tablet: '(min-width: #{$screen-md})';
+$phablet: '(min-width: #{$screen-sm})';
+$phone: '(min-width: #{$screen-xs})';

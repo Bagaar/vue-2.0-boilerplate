@@ -1,0 +1,28 @@
+.panel {
+  @include box-shadow;
+  background-color: $white;
+  border: 1px solid $gray-light;
+  border-radius: $comp-radius;
+  margin: 0  auto;
+  max-width: 320px;
+  padding: $gutter-l;
+  position: relative;
+  width: 100%;
+
+  &--login {
+    .panel__heading {
+      height: $gutter * 1.5;
+
+      .logo {
+        left: 50%;
+        position: absolute;
+        top: -$gutter-l * 1.25;
+        transform: translateX(-($gutter-xxl * 1.25) / 2);
+      }
+    }
+
+    .panel__footer {
+      text-align: center;
+    }
+  }
+}

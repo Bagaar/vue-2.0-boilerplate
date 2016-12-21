@@ -1,0 +1,75 @@
+// main typography
+body,
+input,
+select,
+button,
+textarea {
+  @include em-font-size(14);
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  color: $blue-darker;
+  font-family: $font-body;
+}
+
+// headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-headings;
+}
+
+h1 {
+  @include rem-font-size(24);
+  color: $blue-darker;
+  font-weight: 600;
+  margin: 0 0 $gutter-s * 1.75;
+}
+
+h2 {
+  @include rem-font-size(20);
+  color: $blue-darker;
+  font-weight: 600;
+}
+
+h3 {
+  @include rem-font-size(16);
+  color: $blue-darker;
+  font-weight: 600;
+  margin: 0;
+}
+
+h4 {
+  @include rem-font-size(12);
+  color: $blue-darker;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+// p
+p {
+  @include rem-font-size(14, 20);
+  margin: $gutter-s 0;
+  padding: 0;
+
+  a {
+    @include transition(color);
+    color: $blue;
+
+    @include hover {
+      color: $blue-dark;
+    }
+  }
+}
+
+// li
+li {
+  @include rem-font-size(14, 20);
+}
+
+// small
+small {
+  @include rem-font-size(12, 18);
+}

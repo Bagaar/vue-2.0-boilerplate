@@ -1,0 +1,90 @@
+// --------------------------------------------------
+// Reusable utillity classes, prefixed with 'u-'
+// --------------------------------------------------
+
+.u-clearfix {
+  @include clearfix;
+}
+
+.u-clickable {
+  cursor: pointer;
+}
+
+.u-expand {
+  height: 100%;
+}
+
+.u-hidden {
+  display: none;
+}
+
+.u-helper-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.u-hide-overflow {
+  overflow: hidden;
+}
+
+.u-text-left {
+  text-align: left;
+}
+
+.u-text-center {
+  text-align: center;
+}
+
+.u-text-right {
+  text-align: right;
+}
+
+.u-text-uppercase {
+  text-transform: uppercase;
+}
+
+.u-text-normal {
+  font-weight: 400;
+}
+
+.u-text-green {
+  color: $green;
+}
+
+.u-text-green-light {
+  color: $green-light;
+}
+
+.u-text-red {
+  color: $red;
+}
+
+.u-text-gray {
+  color: $gray;
+}
+
+.u-text-lg {
+  @include em-font-size(18);
+}
+
+.u-disabled {
+  opacity: .4;
+}
+
+.u-gutter-bottom {
+  margin-bottom: $gutter;
+}
+
+.u-no-gutter-top {
+  margin-top: 0;
+}
+
+.u-relative {
+  position: relative;
+}

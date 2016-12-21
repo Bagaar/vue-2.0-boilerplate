@@ -1,0 +1,259 @@
+// form
+
+.form {
+  &__row {
+    text-align: left;
+  }
+
+  &__col {
+    margin-bottom: $gutter-s;
+
+    &--centered {
+      text-align: center;
+    }
+
+    &--no-margin {
+      margin-bottom: 0;
+    }
+  }
+
+  &__error {
+    color: $red;
+    margin: $gutter 0;
+    text-align: center;
+  }
+
+  &__group {
+    margin: $gutter 0;
+
+    &__icon {
+      @include transition;
+      border-right: 1px solid $gray;
+      color: $gray;
+      display: block;
+      height: $comp-size;
+      left: 0;
+      line-height: $comp-size;
+      padding-left: $gutter-xxxs;
+      pointer-events: none;
+      position: absolute;
+      text-align: center;
+      top: 0;
+      width: $comp-small-size;
+    }
+
+    &--float {
+      @include clearfix;
+
+      > label {
+        float: left;
+        margin-right: $gutter-l;
+      }
+    }
+
+    &--has-icon {
+      position: relative;
+
+      input {
+        padding-left: $gutter-l + $gutter-xs !important;
+
+        &:focus + .form__group__icon {
+          border-color: $gray-medium;
+          color: $gray-medium;
+        }
+      }
+    }
+  }
+
+  &__text {
+    line-height: $comp-size;
+    margin-top: $gutter * 1.25;
+  }
+}
+
+// input / select / textarea
+
+input,
+textarea {
+  appearance: none;
+}
+
+.input {
+  &__error {
+    color: $red;
+    font-weight: 600;
+    margin: 5px 0;
+    min-width: 280px;
+  }
+
+  &--has-error {
+    border-color: $red !important;
+  }
+}
+
+// label / textarea / input[tel, text, email, password]
+
+label,
+textarea,
+input[type='tel'],
+input[type='text'],
+input[type='email'],
+input[type='password'] {
+  display: block;
+}
+
+// textarea / input[tel, text, email, password]
+
+textarea,
+input[type='tel'],
+input[type='text'],
+input[type='email'],
+input[type='password'] {
+  @include transition;
+  border: 1px solid $gray;
+  border-radius: $comp-radius;
+  width: 100%;
+
+  // focus
+
+  &:focus {
+    border-color: $gray-medium;
+  }
+}
+
+// input[tel, text, email, password]
+
+input[type='tel'],
+input[type='text'],
+input[type='email'],
+input[type='password'] {
+  height: $comp-size;
+  line-height: ($comp-size - 2px); // 2px = border top and bottom
+  padding: 0 $gutter-s;
+}
+
+input[disabled] {
+  -webkit-text-fill-color: rgba($gray-dark, 1);
+  color: rgba($gray-dark, 1);
+  opacity: 1;
+}
+
+// textarea
+
+textarea {
+  height: $comp-size * 2;
+  padding: $gutter $gutter-s;
+  resize: none;
+}
+
+// label
+
+label {
+  @include ellipsis;
+  color: $gray;
+  height: $gutter * 1.25;
+  text-align: left;
+
+  // label input
+
+  &.label--input {
+    color: $blue-darker;
+    line-height: 26px;
+    padding-left: 24px;
+    position: relative;
+
+    // input
+
+    input {
+      display: none;
+    }
+
+    &--radio-btn {
+      background: $gray-light;
+      border-radius: 4px;
+      cursor: pointer;
+      padding-left: 0;
+      text-align: center;
+
+      .radio {
+        display: none;
+      }
+
+      &:hover,
+      &.checked {
+        @include transition;
+        background-color: $gray-darker;
+        color: $white;
+      }
+    }
+  }
+
+  // large
+  &.label--lg {
+    @include rem-font-size(18);
+  }
+
+  // small
+
+  &.label--sm {
+    @include rem-font-size(14, 22);
+  }
+}
+
+// radio / checkbox
+
+.radio,
+.checkbox {
+  @include square(16px);
+  background-color: $white;
+  border: 1px solid $gray;
+  left: 0;
+  margin-top: -8px;
+  padding: 3px;
+  position: absolute;
+  top: 50%;
+
+  // after
+
+  &::after {
+    @include square(100%);
+    @include transition;
+    background-color: $blue;
+    content: '';
+    display: block;
+    opacity: 0;
+    transform: scale(.4);
+  }
+}
+
+// radio
+
+.radio {
+  border-radius: 8px;
+
+  // after
+
+  &::after {
+    border-radius: 5px;
+  }
+}
+
+// checkbox
+
+.checkbox {
+  border-radius: $comp-radius;
+
+  // after
+
+  &::after {
+    border-radius: 2px;
+  }
+}
+
+// radio / checkbox checked states
+
+input[type='radio']:checked + .radio::after,
+input[type='checkbox']:checked + .checkbox::after {
+  opacity: 1;
+  transform: scale(1);
+}

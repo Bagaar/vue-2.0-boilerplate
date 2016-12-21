@@ -6,6 +6,28 @@
  */
 
 
+ /* ============
+  * jQuery
+  * ============
+  *
+  * Require jQuery
+  *
+  * http://jquery.com/
+  */
+import jQuery from 'jquery';
+
+window.$ = window.jQuery = jQuery;
+
+
+ /* ============
+  * Pointer Events Polyfill
+  * ============
+  *
+  * Fake API
+  */
+import 'utils/pointer-events-polyfill';
+
+
 /* ============
  * Vue
  * ============
@@ -74,6 +96,7 @@ import routes from './app/routes';
 Vue.use(VueRouter);
 
 export const router = new VueRouter({
+  mode: 'history',
   routes,
 });
 router.beforeEach((to, from, next) => {
@@ -123,57 +146,23 @@ Object.keys(locale).forEach((lang) => {
 
 
 /* ============
- * jQuery
+ * Modernizr
  * ============
  *
- * Require jQuery
+ * Import Modernizr (config in .modernizrrc)
  *
- * http://jquery.com/
+ * https://modernizr.com
  */
-import jQuery from 'jquery';
-
-window.$ = window.jQuery = jQuery;
+import 'modernizr';
 
 
 /* ============
- * Bootstrap
+ * Styles
  * ============
  *
- * Require bootstrap
- *
- * http://getbootstrap.com/
+ * Complete sass for Reynaers Dashboard
  */
-require('bootstrap');
-require('bootstrap/less/bootstrap.less');
-
-
-/* ============
- * Font Awesome
- * ============
- *
- * Require font-awesome
- *
- * http://http://fontawesome.io/
- */
-require('font-awesome/less/font-awesome.less');
-
-
-/* ============
- * Styling
- * ============
- *
- * Require the application styling.
- * Stylus is used for this boilerplate.
- *
- * If you don't want to use Stylus, that's fine!
- * Replace the stylus directory with the CSS preprocessor you want.
- * Require the entry point here & install the webpack loader.
- *
- * It's that easy...
- *
- * http://stylus-lang.com/
- */
-require('./assets/stylus/app.styl');
+import './assets/scss/app.scss';
 
 
 export default {

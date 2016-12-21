@@ -1,0 +1,11 @@
+.icon {
+  @include em-font-size(20);
+  color: $green;
+  display: inline-block;
+  padding: $gutter-s $gutter;
+  text-decoration: none;
+
+  &--red {
+    color: $red;
+  }
+}

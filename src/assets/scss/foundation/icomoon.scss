@@ -1,0 +1,24 @@
+// --------------------------------------------------
+// Imported iconfont
+// --------------------------------------------------
+
+@font-face {
+  font-family: 'icomoon';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../fonts/icomoon/icomoon.eot?v5lqxq');
+  src: url('../fonts/icomoon/icomoon.eot?v5lqxq#iefix') format('embedded-opentype'),
+  url('../fonts/icomoon/icomoon.woff2?v5lqxq') format('woff2'),
+  url('../fonts/icomoon/icomoon.ttf?v5lqxq') format('truetype'),
+  url('../fonts/icomoon/icomoon.woff?v5lqxq') format('woff'),
+  url('../fonts/icomoon/icomoon.svg?v5lqxq#icomoon') format('svg');
+}
+
+[class^='icon-'],
+[class*=' icon-'] {
+  @include icomoon;
+}
+
+.icon-warning::before {
+  content: '\e900';
+}

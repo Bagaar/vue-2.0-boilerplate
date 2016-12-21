@@ -1,0 +1,163 @@
+// --------------------------------------------------
+// Button
+// --------------------------------------------------
+
+.button {
+  background: $blue-reynaers;
+  border: 2px solid $blue-reynaers;
+  border-radius: $comp-radius;
+  color: $white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $font-buttons;
+  height: $comp-size;
+  line-height: ($comp-size - 4px); // 4px = border-top + border-bottom
+  outline: 0;
+  padding: 0 $gutter;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+
+  @include hover {
+    background: $blue;
+    border-color: $blue;
+  }
+
+  &__icon {
+    @include em-font-size(26);
+    display: inline-block;
+    margin-right: $gutter-s;
+    position: relative;
+    top: .188em;
+
+    &.icon-plus {
+      @include em-font-size(16);
+      font-weight: 900;
+      top: 1px;
+    }
+  }
+
+  &__label {
+    @include transition(opacity);
+    opacity: 1;
+  }
+
+  &[disabled] {
+    opacity: .5;
+    pointer-events: none;
+  }
+
+  &--outlined {
+    background: none;
+    border-color: $blue-reynaers;
+    color: $blue-reynaers;
+
+    @include hover {
+      background: $blue-reynaers;
+      border-color: $blue-reynaers;
+      color: $white;
+    }
+
+    &.button--loading {
+      background: $blue-reynaers;
+      border-color: $blue-reynaers;
+      color: $white;
+    }
+  }
+
+  &--red {
+    background-color: $red;
+    border-color: $red;
+
+    @include hover {
+      background-color: $red-dark;
+      border-color: $red-dark;
+    }
+
+    &.button--outlined {
+      background: none;
+      color: $red;
+
+      @include hover {
+        background: none;
+        color: $red-dark;
+      }
+    }
+  }
+
+  &--green {
+    background-color: $green;
+    border-color: $green;
+
+    @include hover {
+      background-color: $green-dark;
+      border-color: $green-dark;
+      color: $white;
+    }
+
+    &.button--outlined {
+      background: none;
+      color: $green;
+
+      @include hover {
+        background: none;
+        color: $green;
+      }
+    }
+  }
+
+  &--small {
+    height: $comp-small-size;
+    line-height: ($comp-small-size - 4px); // 4px = border-top + border-bottom
+    padding: 0 $gutter;
+  }
+
+  &--large {
+    height: $comp-large-size;
+    line-height: ($comp-large-size - 4px); // 4px = border-top + border-bottom
+    padding: 0 $gutter;
+
+    @media #{$phablet} {
+      height: $comp-large-size * 1.5;
+      line-height: ($comp-large-size * 1.5 - 4px); // 4px = border-top + border-bottom
+    }
+  }
+
+  &--wide {
+    width: 100%;
+  }
+
+  &--no-border-radius {
+    border-radius: 0;
+  }
+
+  &--loading {
+    opacity: 1 !important;
+
+    .button__label {
+      opacity: 0;
+    }
+  }
+
+  // "Tag-like" buttons, eg. document actions
+  &--round {
+    @include rem-font-size(13);
+    border-radius: $comp-small-size;
+    height: $comp-small-size;
+    line-height: ($comp-small-size - 4px);
+
+    .button {
+      &__icon {
+        font-size: 14px;
+        margin-right: $gutter-xs;
+        top: .05em;
+      }
+
+      &__label {
+        font-weight: 400;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+}

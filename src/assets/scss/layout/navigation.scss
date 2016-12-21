@@ -1,0 +1,25 @@
+.navigation {
+  @include reset-list;
+  display: block;
+  padding: 0 $gutter;
+
+  &__item {
+    @include transition(color);
+    color: $blue-gray-light;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    height: $gutter-xl;
+    line-height: $gutter-xl;
+    padding: 0 $gutter;
+
+    &--active {
+      color: $white;
+      cursor: default;
+    }
+
+    @include hover {
+      color: $white;
+    }
+  }
+}

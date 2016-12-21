@@ -1,0 +1,72 @@
+@mixin avatar-size($size, $border: 0) {
+  border-radius: $size / 2;
+  height: $size;
+  line-height: $size - $border * 2;
+  width: $size;
+}
+
+.avatar {
+  background-color: $blue;
+  color: $white;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+
+  &__content {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__image {
+    background-position: center center;
+    background-size: cover;
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__initials {
+    font-weight: 300;
+
+    &--xs {
+      @include em-font-size(24);
+    }
+
+    &--sm {
+      @include em-font-size(20);
+    }
+
+    &--md {
+      @include em-font-size(16);
+    }
+
+    &--lg {
+      @include em-font-size(14);
+    }
+  }
+
+  &--lg {
+    @include avatar-size(72px);
+    @include em-font-size(28);
+  }
+
+  &--md {
+    @include avatar-size(38px);
+    @include em-font-size(16);
+  }
+
+  &--sm {
+    @include avatar-size(28px, 2px);
+    @include em-font-size(10);
+    background-color: $blue-gray-lighter;
+    border: 2px solid $white;
+    color: $blue-gray;
+
+    .loader__line {
+      left: -8px;
+      position: relative;
+    }
+  }
+}

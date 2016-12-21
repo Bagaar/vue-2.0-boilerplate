@@ -1,0 +1,111 @@
+.header {
+  @include clearfix;
+  background-color: $blue-darker;
+
+  &__left {
+    @include clearfix;
+    float: left;
+
+    .logo {
+      float: left;
+    }
+
+    .navigation {
+      float: left;
+    }
+  }
+
+  &__right {
+    float: right;
+  }
+
+  &__date {
+    color: $white;
+    display: inline-block;
+    font-weight: 600;
+    height: $gutter-xl;
+    line-height: $gutter-xl;
+    margin: 0 $gutter-xs;
+
+    &--day {
+      color: $blue-gray-light;
+    }
+  }
+
+  &__dropdown {
+    position: relative;
+
+    &__trigger {
+      cursor: pointer;
+
+      @include hover {
+        .header__dropdown__trigger__icon {
+          color: $white;
+        }
+      }
+
+      .avatar {
+        margin: 0 $gutter-xxs 0 $gutter;
+        pointer-events: none;
+      }
+
+      &__icon {
+        @include transition(color);
+        @include em-font-size(20);
+        color: $blue-gray-light;
+        display: block;
+        margin-right: $gutter-s;
+      }
+    }
+
+    &__list {
+      @include transition;
+      @include reset-list;
+      @include box-shadow;
+      background-color: $white;
+      border: 1px solid $gray-light;
+      display: block;
+      opacity: 0;
+      pointer-events: none;
+      position: absolute;
+      right: 0;
+      top: 100%;
+      width: 160px;
+      z-index: $zi-header;
+    }
+
+    &__item {
+      @include transition(color);
+      color: $blue-gray-darker;
+      display: block;
+      height: $gutter-l * 1.25;
+      line-height: $gutter-l * 1.25;
+      padding: 0 $gutter-s;
+      text-decoration: none;
+      width: 100%;
+
+      @include hover {
+        color: $blue;
+      }
+
+      &__icon {
+        margin-right: $gutter-xs;
+        position: relative;
+        top: 1px;
+      }
+    }
+
+    &--open {
+      .header__dropdown {
+        &__list {
+          opacity: 1;
+          pointer-events: all;
+        }
+
+        &__trigger__icon {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+}

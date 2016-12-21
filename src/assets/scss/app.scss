@@ -1,0 +1,35 @@
+// --------------------------------------------------
+// Main scss file, will only contain imports
+// --------------------------------------------------
+
+@import 'vendor/normalize';
+
+@import 'dependencies/mixins';
+@import 'dependencies/variables';
+
+@import 'foundation/base';
+@import 'foundation/general';
+@import 'foundation/grid';
+@import 'foundation/icomoon';
+@import 'foundation/typography';
+@import 'foundation/utils';
+
+@import 'layout/app';
+@import 'layout/fallback';
+@import 'layout/footer';
+@import 'layout/header';
+@import 'layout/navigation';
+@import 'layout/section';
+
+@import 'components/anchor';
+@import 'components/avatar';
+@import 'components/button';
+@import 'components/form';
+@import 'components/hr';
+@import 'components/icon';
+@import 'components/loader';
+@import 'components/modals';
+@import 'components/panel';
+@import 'components/select';
+@import 'components/valign';
+@import 'components/view';

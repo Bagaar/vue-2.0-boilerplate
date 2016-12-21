@@ -1,0 +1,28 @@
+section.section {
+  border-bottom: 1px solid $gray;
+  padding: $gutter;
+
+  &--info {
+    padding: $gutter-s * 1.3 $gutter $gutter;
+  }
+
+  &--white {
+    background-color: $white;
+  }
+
+  &--gray-lighter {
+    background-color: $gray-lighter;
+  }
+
+  &--no-padding {
+    padding: 0;
+  }
+
+  &--no-border {
+    border-bottom: 0;
+  }
+
+  &--min-height {
+    min-height: 113px;
+  }
+}

@@ -1,0 +1,16 @@
+// --------------------------------------------------
+// Footer styles
+// --------------------------------------------------
+
+.footer {
+  background-color: $green-dark;
+  color: $white;
+  display: none;
+  height: 60px;
+  position: relative;
+  z-index: $zi-footer;
+
+  @media #{$phablet} {
+    display: block;
+  }
+}

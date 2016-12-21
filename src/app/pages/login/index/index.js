@@ -25,7 +25,7 @@ export default {
   },
 
   components: {
-    VLayout: require('layouts/minimal/minimal.vue'),
-    VPanel: require('components/panel/panel.vue'),
+    VLayout: require('layouts/minimal/index.vue'),
+    VPanel: require('components/panel/index.vue'),
   },
 };

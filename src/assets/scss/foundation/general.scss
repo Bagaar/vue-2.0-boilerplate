@@ -1,0 +1,54 @@
+// body
+
+body {
+  &.is--dragging * {
+    cursor: grabbing;
+    user-select: none;
+  }
+
+  &.is--loading * {
+    cursor: wait;
+  }
+}
+
+// hovers
+
+a,
+button {
+  @include transition(all, .4s);
+
+  @include hover {
+    @include transition(all, .1s, ease-in);
+  }
+}
+
+// placeholders
+
+// scss-lint:disable all
+::-webkit-input-placeholder {
+  @include em-font-size(16);
+  color: $gray-medium;
+}
+
+:-moz-placeholder {
+  @include em-font-size(16);
+  color: $gray-medium;
+}
+
+::-moz-placeholder {
+  @include em-font-size(16);
+  color: $gray-medium;
+}
+
+:-ms-input-placeholder {
+  @include em-font-size(16);
+  color: $gray-medium;
+}
+// scss-lint:enable all
+
+hr {
+  background-color: $gray;
+  border: 0;
+  height: 1px;
+  margin: $gutter 0;
+}

@@ -1,0 +1,50 @@
+.anchor {
+  @include reset-button;
+  color: $blue;
+  text-decoration: underline;
+
+  @include hover {
+    color: $blue-dark;
+  }
+
+  &--gray {
+    color: $gray-medium;
+
+    @include hover {
+      color: $gray-dark;
+    }
+  }
+
+  &--blue-darker {
+    color: $blue-darker;
+
+    @include hover {
+      color: $blue;
+    }
+  }
+
+  &--green {
+    color: $green;
+
+    @include hover {
+      color: $green-dark;
+    }
+  }
+
+  &--white {
+    color: rgba($white, .75);
+    font-weight: 600;
+
+    @include hover {
+      color: $white;
+    }
+  }
+
+  &--no-underline {
+    text-decoration: none;
+  }
+
+  &--block {
+    display: block;
+  }
+}

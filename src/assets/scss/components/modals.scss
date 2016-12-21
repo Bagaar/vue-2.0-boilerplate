@@ -1,0 +1,142 @@
+.modals {
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  position: fixed;
+  right: 0;
+  top: 0;
+
+  &__background {
+    @include transition(opacity);
+    background-color: rgba($black, .9);
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  &__content {
+    -webkit-overflow-scrolling: touch;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+    width: 100%;
+  }
+
+  &--open {
+    pointer-events: all;
+
+    .modals__background {
+      opacity: 1;
+    }
+  }
+}
+
+.modal {
+  @include transition;
+  bottom: $gutter-s;
+  left: $gutter-s;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  right: $gutter-s;
+  text-align: center;
+  top: $gutter-s;
+  transform: scale(.95);
+
+  @media #{$phablet} {
+    bottom: $gutter;
+    left: $gutter;
+    right: $gutter;
+    top: $gutter;
+  }
+
+  &__close {
+    @include transition(color);
+    @include em-font-size(20);
+    background-color: $green;
+    border-radius: $comp-radius * 2;
+    color: $green;
+    cursor: pointer;
+    padding: $gutter-s;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    @media #{$phablet} {
+      padding: $gutter;
+    }
+
+    @include hover {
+      color: $black;
+    }
+  }
+
+  &__content {
+    background-color: $green;
+    border-radius: $comp-radius * 2;
+    box-shadow: 0 0 $gutter $black;
+    display: inline-block;
+    padding: $gutter-l $gutter-s;
+    pointer-events: all;
+    position: relative;
+
+    @media #{$phablet} {
+      padding: $gutter-xl;
+    }
+  }
+
+  &__body {
+    height: 100%;
+  }
+
+  &--md {
+    .modal {
+      &__content {
+        max-width: 400px;
+        width: 100%;
+      }
+    }
+  }
+
+  &--lg {
+    > .valign {
+      display: block;
+
+      > .valign__cell {
+        display: block;
+        height: 100%;
+      }
+    }
+
+    .modal {
+      &__close {
+        position: fixed;
+        right: $gutter-xs;
+        top: $gutter-xs;
+
+        @media #{$phablet} {
+          right: 0;
+          top: 0;
+        }
+      }
+
+      &__content {
+        -webkit-overflow-scrolling: touch;
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+        position: relative;
+        width: 100%;
+      }
+    }
+  }
+
+  &--open {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
